@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demographics</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Study</a>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        <h2 class="text-center mb-4">Participant Information Form</h2>
+        <p class="lead text-center">
+            Thank you for your interest in participating in this study. Please complete the following information accurately.
+        </p>
+
+        <!-- Display form validation errors -->
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for field_errors in form.errors.values() %}
+                        {% for error in field_errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <form id="ParticipantInfo" action="{{ url_for('handle_demographics') }}" method="POST">
+            {{ form.hidden_tag() }}
+
+            <!-- First Name -->
+            <div class="form-group">
+                {{ form.first_name.label(class="font-weight-bold") }}
+                {{ form.first_name(class="form-control", placeholder="Enter your first name") }}
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                {{ form.last_name.label(class="font-weight-bold") }}
+                {{ form.last_name(class="form-control", placeholder="Enter your last name") }}
+            </div>
+
+            <!-- Age -->
+            <div class="form-group">
+                {{ form.age.label(class="font-weight-bold") }}
+                {{ form.age(class="form-control", placeholder="Enter your age") }}
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                {{ form.email.label(class="font-weight-bold") }}
+                {{ form.email(class="form-control", placeholder="Enter your email") }}
+            </div>
+
+            <!-- Gender (Radio Buttons) -->
+            <div class="form-group">
+                {{ form.gender.label(class="font-weight-bold d-block") }}
+                {% for subfield in form.gender %}
+                    <div class="form-check form-check-inline">
+                        {{ subfield(class="form-check-input") }}
+                        {{ subfield.label(class="form-check-label") }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Type of Participant (Radio Buttons) -->
+            <div class="form-group">
+                {{ form.type_of_participant.label(class="font-weight-bold d-block") }}
+                {% for subfield in form.type_of_participant %}
+                    <div class="form-check form-check-inline">
+                        {{ subfield(class="form-check-input") }}
+                        {{ subfield.label(class="form-check-label") }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Time Spent on Social Media -->
+            <div class="form-group">
+                {{ form.time_spent.label(class="font-weight-bold") }}
+                {{ form.time_spent(class="form-control", placeholder="E.g., 2 hours per day") }}
+            </div>
+
+            <!-- Platforms Used (Checkboxes) -->
+            <div class="form-group">
+                {{ form.platforms_used.label(class="font-weight-bold d-block") }}
+                {% for subfield in form.platforms_used %}
+                    <div class="form-check">
+                        {{ subfield(class="form-check-input") }}
+                        {{ subfield.label(class="form-check-label") }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-4">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</body>
+</html>

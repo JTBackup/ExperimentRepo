@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 2: Social Media and the World</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <a class="navbar-brand" href="#">Study</a>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Warning Message -->
+        <div class="alert alert-warning text-center">
+            <strong>Important:</strong> Please ensure that your <strong>microphone</strong> and <strong>camera</strong> are enabled to participate in this study.
+        </div>
+
+        <h2 class="text-center mb-4">Question 2</h2>
+
+        <p class="lead text-justify">
+            Can you describe, in your own words, the general impact <strong>social media has had on the world</strong>?
+        </p>
+
+        <div class="text-center mt-4">
+            <video id="video" class="video-display mb-4" autoplay></video>
+        </div>
+        <div class="text-center mt-4">
+            <button id="startBtn" class="btn btn-primary mr-4">Start Recording</button>
+            <button id="stopBtn" class="btn btn-danger" disabled>Stop Recording</button>
+        </div>
+        <div class="text-center mt-4">
+            <video id="playback" class="video-display mb-4" controls></video>
+        </div>
+        <div class="text-center mt-4">
+            <button id="uploadBtn" class="btn btn-success" disabled>Submit Video</button>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Include your JavaScript file -->
+    <script src="{{ url_for('static', filename='js/video_record.js') }}"></script>
+</body>
+</html>

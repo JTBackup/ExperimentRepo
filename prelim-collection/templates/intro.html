@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investigating Student Awareness and Perception Around Social Media and Privacy: Part 1</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <a class="navbar-brand" href="#">Study</a>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        <h1 class="text-center mb-4">Welcome to Our Study</h1>
+    
+
+        <!-- Important Notice -->
+        <div class="alert alert-warning text-center mt-4">
+            <strong>Important:</strong> This is a two-part study designed to investigate your lived experiences and perceptions around social media and privacy through both open-ended audio-visual questions and responses to a series of standard scales.
+            <br><br>
+            For this part of the study, <strong>you are required to have access to both a microphone and camera</strong> so that you can provide your audio-visual responses. In addition, <strong>the study must be taken from a desktop or laptop computer using <u>Google Chrome</u></strong>, as the study does not support mobile devices or other browsers.
+            <br><br>
+            <strong>Please do not continue if you do not currently have access to a computer with Google Chrome, a microphone, and a webcam.</strong>
+        </div>
+
+        <!-- Next Button -->
+        <div class="text-center mt-5">
+            <a href="{{ url_for('consent') }}" class="btn btn-primary btn-lg">Proceed to Consent Form</a>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and dependencies (Optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</body>
+</html>

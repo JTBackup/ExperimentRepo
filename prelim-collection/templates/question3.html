@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 3: Future of Social Media</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <a class="navbar-brand" href="#">Study</a>
+    </nav>
+
+    <div class="container mt-3">
+        <!-- Warning Message -->
+        <div class="alert alert-warning text-center">
+            <strong>Important:</strong> Please ensure that your <strong>microphone</strong> and <strong>camera</strong> are enabled to participate in this study.
+        </div>
+
+        <h2 class="text-center mb-4">Question 3</h2>
+
+        <p class="lead text-justify">
+            How do you envision the <strong>future of social media</strong>? What changes or developments do you anticipate, and how might they affect society?
+        </p>
+
+        <div class="text-center mt-4">
+            <video id="video" class="video-display mb-3" autoplay></video>
+        </div>
+        <div class="text-center mt-3">
+            <button id="startBtn" class="btn btn-primary mr-2">Start Recording</button>
+            <button id="stopBtn" class="btn btn-danger" disabled>Stop Recording</button>
+        </div>
+        <div class="text-center mt-4">
+            <video id="playback" class="video-display mb-3" controls></video>
+        </div>
+        <div class="text-center mt-3">
+            <button id="uploadBtn" class="btn btn-success" disabled>Submit Video</button>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Include your JavaScript file -->
+    <script src="{{ url_for('static', filename='js/video_record.js') }}"></script>
+</body>
+</html>
