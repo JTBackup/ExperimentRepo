@@ -9,18 +9,103 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Consent Form</h1>
-        <p class="text-justify mt-4">
-            By clicking "I Consent to Participate" below, you acknowledge that you have read and understood the information provided and consent to participate in this study.
+        <h3 class="text-center">Study Title: Investigating Attitudes Towards Digital Media</h3>
+        <p><strong>Principal Investigator:</strong> Gerald Cupchik</p>
+        <p><strong>Institution:</strong> University of Toronto</p>
+        <p><strong>Contact Information:</strong> <a href="mailto:gerald.cupchik@mail.utoronto.ca">gerald.cupchik@mail.utoronto.ca</a></p>
+        
+        <h3>Introduction:</h3>
+        <p>
+            You are invited to participate in a research study that aims to understand how individuals interact with and respond to digital media. 
+            Before you decide to participate, it is important for you to understand why the research is being done and what it will involve. 
+            Please read the following information carefully.
         </p>
+        
+        <h3>Description of the Study:</h3>
+        <p>
+            This study involves the analysis of participant reactions to various types of digital media. 
+            The purpose is to explore emotional and psychological responses to a wide variety of digital content. 
+            At certain points within the study, you will be asked to record a video response. 
+            In order to participate in the study, you must be using a computer with a working video camera and microphone. 
+            Please do not take the study if you are not yet at a computer with those facilities. 
+            Please note that the study is not configured to process video or other responses recorded from a smartphone so please do not complete this study on your phone.
+        </p>
+        
+        <h3>What Will Happen If I Take Part?</h3>
+        <ul>
+            <li>Answer questions and complete surveys about your experiences and reactions to various pieces of digital media.</li>
+            <li>View various forms of digital media.</li>
+            <li>Record (audio and video) your answers to various prompts about your experience with the digital world at large.</li>
+        </ul>
+        
+        <h3>Benefits:</h3>
+        <p>
+            UofT Students will be eligible to receive 1.0 SONA credits for their participation in this study. 
+            All participants will get to engage in an educational, reflective experience regarding their digital media consumption.
+        </p>
+        
+        <h3>Risks and Discomforts:</h3>
+        <p>
+            You may experience discomfort or emotional distress from viewing digital media content. 
+            There are minimal risks associated with the recording and viewing of digital content.
+        </p>
+        
+        <h3>Resources:</h3>
+        <p>
+            For more information on how to protect yourself and your data while navigating the digital world, 
+            please visit: <a href="https://staysafeonline.org/resources/" target="_blank">https://staysafeonline.org/resources/</a>
+        </p>
+        <p>
+            If you feel distressed or extreme discomfort for any reasons during the study, 
+            you are encouraged to stop taking the study and access the following mental health resources:
+            <br>
+            <a href="https://mentalhealth.utoronto.ca/" target="_blank">https://mentalhealth.utoronto.ca/</a>
+            <br>
+            <a href="https://www.canada.ca/en/public-health/topics/mental-health-wellness.html" target="_blank">https://www.canada.ca/en/public-health/topics/mental-health-wellness.html</a>
+        </p>
+        
+        <h3>Confidentiality:</h3>
+        <p>
+            Your identity and all information collected for this study will remain confidential. 
+            The recordings, photographs, and data will be securely stored and only accessible to the research team. 
+            The Human Research Ethics Unit may have confidential access to data to help ensure participant protection procedures are followed. 
+            Please visit: <a href="https://research.utoronto.ca/informed-consent" target="_blank">https://research.utoronto.ca/informed-consent</a> for more information.
+        </p>
+        
+        <h3>Voluntary Participation:</h3>
+        <p>
+            Your participation is entirely voluntary.
+            You have the right to withdraw at any point. 
+            Compensation will not be awarded for any withdrawn attempts.
+        </p>
+        
+        <h3>Use of Study Results:</h3>
+        <p>
+            The results may be used for academic purposes, such as publications or presentations, but your identity will remain confidential.
+        </p>
+        
+        <h3>Participant Rights:</h3>
+        <p>
+            Participants are encouraged to contact the Research Oversight and Compliance Office - Human Research Ethics Unit 
+            (<a href="mailto:ethics.review@utoronto.ca">ethics.review@utoronto.ca</a>, 416-946-3273), if they have any questions about their rights as research participants.
+        </p>
+        
+        <h3>Agreement:</h3>
+        <p>
+            I have read and understood the information provided. I am aware of the potential risks and discomforts. 
+            I understand that my participation is voluntary and that I am free to withdraw at any time by navigating away from the study. 
+            However, withdrawing will result in receiving no compensation for my participation in the study.
+        </p>
+        
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="demographics()">I Consent to Participate</button>
+        </div>
     </div>
 
     </script>
+        
+    <a href="{{ url_for('demographics') }}">Next.</a></body>
 
-
-    <!-- Agree Button -->
-    <div class="text-center mt-5">
-        <a href="{{ url_for('demographics') }}" class="btn btn-primary btn-lg">I Consent to Participate</a>
     </div>
-
 </body>
 </html>
